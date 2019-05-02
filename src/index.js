@@ -4,7 +4,7 @@ import './index.css';
 import BB from './BBchan.js';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<BB />, document.getElementById('root'));
+ReactDOM.render(<BB greeting = {"Hello" + " se*m*pa*i"}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
