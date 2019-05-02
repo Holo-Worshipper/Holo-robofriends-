@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './BB.css'
-import 'tachyons'
+import './BB.css';
+import 'tachyons';
 
 class BB extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class BB extends Component {
 
     render() {
         return(
-            <div>
+            <div className = "tc f1">
                 <p>nothing so far!</p>
                 <p>Welcome to React!</p>
             </div>
