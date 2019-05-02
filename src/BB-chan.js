@@ -4,7 +4,10 @@ import CardList from './CardList.js';
 
 const BB = (props) => {
     return(
-        <CardList robots = {robots}  />
+        <div>
+            <h1>Robofriends</h1>
+            <CardList robots = {robots}  />
+        </div>
     );
 }
 
