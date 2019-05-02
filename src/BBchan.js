@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './BB.css'
+import 'tachyons'
 
 class BB extends Component {
     constructor(props) {
