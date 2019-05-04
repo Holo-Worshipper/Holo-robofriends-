@@ -12,11 +12,11 @@ class BB extends Component {
         }
     }
 
-    onSearchChange(event) {
-        console.log(event.target.value);
-        const filteredRobots = this.state.robots.filter(robot => {
-            return robot.name.toLowerCase().includes(searchfield.toLowerCase);
+    onSearchChange = (event) => {
+        const filteredRobots = this.state.robots.filter(robots => {
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase);
         })
+        console.log(filteredRobots);
     }
 
     render() {
