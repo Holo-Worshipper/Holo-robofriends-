@@ -8,23 +8,23 @@ class BB extends Component {
         super(props);
         this.state = {
             robots: robots,
-            searchfield: "",
+            searchfield: ''
         }
-    }
+    };
 
     onSearchChange = (event) => {
-        const filteredRobots = this.state.robots.filter(robots => {
-            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase);
-        })
-        console.log(filteredRobots);
-    }
+        this.setState({ searchfield :event.target.value });
+    };
 
     render() {
+        const filteredRobots = this.state.robots.filter(robots => {
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        });
         return(
             <div className = "tc">
                 <h1>Robofriends</h1>
                 <SearchBox searchChange = {this.onSearchChange}/>
-                <CardList robots = {this.state.robots}  />
+                <CardList robots = { filteredRobots }  />
             </div>
         );
     };
