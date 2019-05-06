@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'; 
 import * as serviceWorker from './serviceWorker';
-import BB from './BB-chan.js';
+import BB from './Containers/BB-chan.js/index.js';
 
 ReactDOM.render(<BB />, document.getElementById('root'));
 

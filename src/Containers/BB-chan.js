@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CardList from './CardList.js';
-import SearchBox from './SearchBox.js';
+import CardList from '../Components/CardList.js/index.js';
+import SearchBox from '../Components/SearchBox.js/index.js';
 import './App.css';
-import Scroll from './MeltScroll';
+import Scroll from '../Components/MeltScroll';
 
 class BB extends Component {
     constructor(props) {
