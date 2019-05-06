@@ -8,10 +8,16 @@ class BB extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            robots: robots,
+            robots: [],
             searchfield: ''
         }
     };
+
+    componentDidMount() {
+        this.setState({
+            robots: robots
+        })
+    }
 
     onSearchChange = (event) => {
         this.setState({ searchfield :event.target.value });
