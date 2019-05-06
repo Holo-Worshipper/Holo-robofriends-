@@ -8,4 +8,9 @@
 h1 {
     font-family: 'SEGA LOGO FONT';
     font-size: 3.8em;
+    color: cyan;
+}
+
+#loading {
+    text-align: center;
 }

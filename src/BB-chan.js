@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { robots } from './Robots.js';
 import CardList from './CardList.js';
 import SearchBox from './SearchBox.js';
 import './App.css';
+import Scroll from './MeltScroll';
 
 class BB extends Component {
     constructor(props) {
@@ -14,8 +14,12 @@ class BB extends Component {
     };
 
     componentDidMount() {
-        this.setState({
-            robots: robots
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(users => {
+            this.setState({
+                robots: users
+            })
         })
     }
 
@@ -27,13 +31,21 @@ class BB extends Component {
         const filteredRobots = this.state.robots.filter(robots => {
             return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         });
-        return(
-            <div className = "tc">
-                <h1 >Robofriends</h1>
-                <SearchBox searchChange = {this.onSearchChange}/>
-                <CardList robots = { filteredRobots }  />
-            </div>
-        );
+
+        if (this.state.robots.length === 0) {
+            return <h1 id="loading" >Loading...</h1>
+        } else {
+            return(
+                <div className = "tc">
+                    <h1 >Robofriends</h1>
+                    <SearchBox searchChange = {this.onSearchChange}/>
+                    <Scroll>
+                        <CardList robots = { filteredRobots }  />
+                    </Scroll>
+                </div>
+            );
+        }
+
     };
 };
 
