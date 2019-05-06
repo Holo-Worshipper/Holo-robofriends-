@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from '../Components/CardList.js/index.js';
-import SearchBox from '../Components/SearchBox.js/index.js';
-import './App.css';
+import CardList from '../Components/CardList.js';
+import SearchBox from '../Components/SearchBox.js';
+import '../App.css';
 import Scroll from '../Components/MeltScroll';
 
 class BB extends Component {
@@ -28,11 +28,12 @@ class BB extends Component {
     };
 
     render() {
-        const filteredRobots = this.state.robots.filter(robots => {
-            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { robots, searchfield } = this.state;
+        const filteredRobots = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         });
 
-        if (this.state.robots.length === 0) {
+        if (!robots.length) {
             return <h1 id="loading" >Loading...</h1>
         } else {
             return(
